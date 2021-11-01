@@ -1,0 +1,12 @@
+package com.juan.springboot.recetas.entity;
+
+import java.io.Serializable;
+
+public class ItemReceta implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
+	private Long id;
+	private Integer cantidad;
+
+}

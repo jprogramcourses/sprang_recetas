@@ -1,0 +1,16 @@
+package com.juan.springboot.recetas.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.juan.springboot.recetas.service.ICocineroService;
+
+public class CocineroController {
+	
+	@Autowired
+	private ICocineroService cocineroService;
+	
+	public List<Cocinero> getConcineros(){
+		return cocineroService.findAll();
+	}
+
+}

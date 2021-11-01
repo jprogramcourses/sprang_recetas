@@ -1,0 +1,8 @@
+package com.juan.springboot.recetas.entity;
+
+public class ItemReceta {
+	
+	private Integer id;
+	private Integer cantidad;
+
+}
