@@ -21,3 +21,11 @@ Gsrc/main/java/com/juan/springboot/recetas/service/ICocineroService.java,8\2\82
 Lsrc/main/java/com/juan/springboot/recetas/controller/CocineroController.java,3\2\328e7322947d59e86519bb5c0d4852f3f60dad62
 z
 Jsrc/main/java/com/juan/springboot/recetas/service/CocineroServiceImpl.java,1\7\176cf2e902d01c5aa7fb6b65739aebe549dbf8da
+
+Osrc/main/java/com/juan/springboot/recetas/repository/IngredienteRepository.java,7\6\760bfc0b625cd174625f79d1e9bdb2fac102148c
+z
+Jsrc/main/java/com/juan/springboot/recetas/service/IIngredienteService.java,7\2\723ce271656ffd7f998a12d21bdc174bfe99fec0
+}
+Msrc/main/java/com/juan/springboot/recetas/service/IngredienteServiceImpl.java,e\6\e6c9e380dd1eeff1cdd4529e66be5d5def6a8153
+
+Osrc/main/java/com/juan/springboot/recetas/controller/IngredienteController.java,0\2\02603f1f05afd6185171ad75da267b9b7eebca51

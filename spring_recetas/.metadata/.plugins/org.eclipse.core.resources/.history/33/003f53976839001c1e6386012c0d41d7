@@ -1,5 +1,0 @@
-package com.juan.springboot.recetas.entity;
-
-public class Ingrediente {
-
-}

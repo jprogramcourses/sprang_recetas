@@ -19,6 +19,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -32,13 +33,15 @@ public class Cocinero implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotEmpty
+	@NotEmpty(message = "El campo nombre no debe estar vacío")
 	@Size(min = 3, max = 25, message = "El nombre debe tener entre 3 y 25 caracteres")
 	private String nombre;
 	private String apellido;
-	@NotEmpty
+	@NotEmpty(message = "El campo email no debe estar vacío")
 	@Email
+	@Column(unique = true)
 	private String email;
+	@NotNull(message = "La fecha no puede estar vacía")
 	@Column(name = "create_at")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createAt;
@@ -46,10 +49,10 @@ public class Cocinero implements Serializable {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cocinero", cascade = CascadeType.REFRESH)
 	private List<Receta> recetas;
 	
-	@PrePersist
-	public void addDate() {
-		this.createAt = new Date();
-	}
+//	@PrePersist
+//	public void addDate() {
+//		this.createAt = new Date();
+//	}
 	
 	public Cocinero() {
 		recetas = new ArrayList<>();

@@ -1,0 +1,76 @@
+
+y
+java:S4684H"@Replace this persistent entity with a simple POJO or DTO object.(Ø¶è8ğé©ãÍ/H”RCRITICALZVULNERABILITY
+\
+java:S1452H"&Remove usage of generic wildcard type.(Ø¶è8æ–‘ÊÏ/H•RCRITICALZ
+CODE_SMELL
+‘
+java:S2293Y"YReplace the type specification in this constructor call with the diamond operator ("<>").(¯ü½¥ÿÿÿÿÿ8“Ä†ËÏ/H–RMINORZ
+CODE_SMELL
+y
+java:S4684a"@Replace this persistent entity with a simple POJO or DTO object.(˜‰à8ŒßßãÍ/H—RCRITICALZVULNERABILITY
+‘
+java:S2293D"YReplace the type specification in this constructor call with the diamond operator ("<>").( ‹¸¼úÿÿÿÿ8Ç§‘Ï/H˜RMINORZ
+CODE_SMELL
+€
+java:S1858X"M"getLocalizedMessage" returns a string, there's no need to call "toString()".(Ö™áş8‘ì£ËÏ/H™RMINORZ
+CODE_SMELL
+‘
+java:S2293="YReplace the type specification in this constructor call with the diamond operator ("<>").(¯ü½¥ÿÿÿÿÿ8ÙÖ§ÏÏ/HšRMINORZ
+CODE_SMELL
+€
+java:S1858z"M"getLocalizedMessage" returns a string, there's no need to call "toString()".(Ö™áş8µ£ËÏ/H›RMINORZ
+CODE_SMELL
+’
+java:S2293’"YReplace the type specification in this constructor call with the diamond operator ("<>").(¯ü½¥ÿÿÿÿÿ8“Ä†ËÏ/HœRMINORZ
+CODE_SMELL
+m
+java:S1854L":Remove this useless assignment to local variable "errors".(“€º¬8µû¯ÏÏ/HRMAJORZ
+CODE_SMELL
+
+java:S2293•"YReplace the type specification in this constructor call with the diamond operator ("<>").(À”¨â8Ö·¿‘Ï/HRMINORZ
+CODE_SMELL
+‘
+java:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(şàßïÿÿÿÿÿ8ëç•Ï/HŸRMINORZ
+CODE_SMELL
+’
+java:S2293„"YReplace the type specification in this constructor call with the diamond operator ("<>").(éäÉÓøÿÿÿÿ8‹üñÏ/H RMINORZ
+CODE_SMELL
+b
+java:S1452‹"&Remove usage of generic wildcard type.(‰ßÆˆşÿÿÿÿ8Àç×¨Ï/H¡RCRITICALZ
+CODE_SMELL
+
+java:S1192;"IDefine a constant instead of duplicating this literal "mensaje" 10 times.(İÄûÕ8Ç§‘Ï/H¢RCRITICALZ
+CODE_SMELL
+{
+java:S2259‘"IA "NullPointerException" could be thrown; "getMessage()" can return null.(—õ‡Àúÿÿÿÿ8ÓİîºÏ/H­RMAJORZBUG
+Œ
+java:S2293]"YReplace the type specification in this constructor call with the diamond operator ("<>").(À”¨â8ºî¨Ï/H²RMINORZ
+CODE_SMELL
+‹
+java:S2293w"YReplace the type specification in this constructor call with the diamond operator ("<>").(·°åY8ºî¨Ï/H³RMINORZ
+CODE_SMELL
+m
+java:S1854e":Remove this useless assignment to local variable "errors".(“€º¬8Ãğ±ÏÏ/H´RMAJORZ
+CODE_SMELL
+{
+java:S1192<"FDefine a constant instead of duplicating this literal "error" 4 times.(ğ¨¸|8æ–‘ÊÏ/HµRCRITICALZ
+CODE_SMELL
+\
+java:S14525"&Remove usage of generic wildcard type.(ªÎ”ø8·«ŒÏ/HºRCRITICALZ
+CODE_SMELL
+‘
+java:S2293{"YReplace the type specification in this constructor call with the diamond operator ("<>").(éäÉÓøÿÿÿÿ8æ–‘ÊÏ/H»RMINORZ
+CODE_SMELL
+‘
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(şàßïÿÿÿÿÿ8•‡íÎÏ/H¼RMINORZ
+CODE_SMELL
+‘
+java:S2293Q"YReplace the type specification in this constructor call with the diamond operator ("<>").(®©ÎÒûÿÿÿÿ8Àç×¨Ï/H½RMINORZ
+CODE_SMELL
+\
+java:S1452a"&Remove usage of generic wildcard type.(˜‰à8Ç§‘Ï/H¾RCRITICALZ
+CODE_SMELL
+‘
+java:S2293j"YReplace the type specification in this constructor call with the diamond operator ("<>").(®©ÎÒûÿÿÿÿ8Ö·¿‘Ï/H¿RMINORZ
+CODE_SMELL
