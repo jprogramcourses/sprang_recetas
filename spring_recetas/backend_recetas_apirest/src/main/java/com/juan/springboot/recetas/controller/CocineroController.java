@@ -1,5 +1,6 @@
 package com.juan.springboot.recetas.controller;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,10 +28,24 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.juan.springboot.recetas.entity.Cocinero;
 import com.juan.springboot.recetas.service.ICocineroService;
 
+/**
+ * Topics used in the class:
+ * <ul>
+ * <li>@CrossOrigin</li>
+ * <li>org.springframework.data.domain.Page</li>
+ * <li>org.springframework.data.domain.PageRequest</li>
+ * <li>org.springframework.data.domain.Pageable</li>
+ * <li>ServletUriComponentsBuilder</li>
+ * </ul>
+ * 
+ * @author juand
+ *
+ */
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 public class CocineroController {
@@ -88,9 +103,15 @@ public class CocineroController {
 			response.put("error", e.getMessage().concat(": ").concat(e.getLocalizedMessage().toString()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
+		
 		response.put("mensaje", "El cliente ha sido creado con éxito");
 		response.put("cocinero", cocinero);
-		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+		
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(cocinero.getId()).toUri();
+		ResponseEntity<?> reponseUri = ResponseEntity.created(location ).build();
+		
+//		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+		return reponseUri;
 	}
 
 	@PutMapping(value = "/cocineros/{idCocinero}", consumes = MediaType.APPLICATION_JSON_VALUE)
