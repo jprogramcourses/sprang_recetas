@@ -18,6 +18,11 @@ public class IngredienteServiceImpl implements IIngredienteService {
 	public Ingrediente findById(Long id) {
 		return ingredienteRepository.findById(id).orElse(null);
 	}
+	
+	@Override
+	public Ingrediente findByNombre(String nombre) {
+		return ingredienteRepository.findByNombre(nombre);
+	}
 
 	@Override
 	public List<Ingrediente> findAll() {
