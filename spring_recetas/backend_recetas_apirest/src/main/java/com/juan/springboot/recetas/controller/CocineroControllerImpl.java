@@ -48,23 +48,26 @@ import com.juan.springboot.recetas.service.ICocineroService;
  */
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
-public class CocineroControllerImpl {
+public class CocineroControllerImpl implements CocineroController {
 
 	@Autowired
 	private ICocineroService cocineroService;
 
 	@GetMapping(value = "/cocineros", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Override
 	public List<Cocinero> getCocineros() {
 		return cocineroService.findAll();
 	}
 	
 	@GetMapping(value = "/cocineros/page/{page}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Override
 	public Page<Cocinero> getCocineros(@PathVariable Integer page) {
 		Pageable pageable = PageRequest.of(page, 3);
 		return cocineroService.findAll(pageable);
 	}
 
 	@GetMapping(value = "/cocineros/{idCocinero}")
+	@Override
 	public ResponseEntity<?> show(@PathVariable Integer idCocinero) {
 		Cocinero cocinero = null;
 		Map<String, Object> response = new HashMap<>();
@@ -84,6 +87,7 @@ public class CocineroControllerImpl {
 	}
 
 	@PostMapping(value = "/cocineros", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@Override
 	public ResponseEntity<?> create(@Valid @RequestBody Cocinero cocinero, BindingResult result) {
 		Map<String, Object> response = new HashMap<>();
 		
@@ -115,6 +119,7 @@ public class CocineroControllerImpl {
 	}
 
 	@PutMapping(value = "/cocineros/{idCocinero}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@Override
 	public ResponseEntity<?> update(@Valid @RequestBody Cocinero cocinero, BindingResult result, @PathVariable Integer idCocinero) {
 		Map<String, Object> response = new HashMap<>();
 		
@@ -157,6 +162,7 @@ public class CocineroControllerImpl {
 
 	@DeleteMapping(value = "/cocineros/{idCocinero}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@Override
 	public ResponseEntity<?> delete(@PathVariable Integer idCocinero) {
 		Map<String, Object> response = new HashMap<>();
 		try {
