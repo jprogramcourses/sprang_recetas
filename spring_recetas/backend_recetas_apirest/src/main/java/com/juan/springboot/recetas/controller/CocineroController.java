@@ -8,9 +8,11 @@ import org.springframework.validation.BindingResult;
 
 import com.juan.springboot.recetas.entity.Cocinero;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
+@Api(tags = "Cocinero API")
 public interface CocineroController {
 	
 	@ApiOperation(value = "${controller.cocinero.getcocineros}")

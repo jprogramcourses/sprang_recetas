@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.juan.springboot.recetas.entity.Ingrediente;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +13,9 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ExampleProperty;
 
+@Api(value = "Example value attribute", 
+	tags = "Ingrediente API",
+	consumes = "application/json")
 public interface IngredienteController {
 	
 	public List<Ingrediente> getIngredientes();
