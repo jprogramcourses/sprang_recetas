@@ -59,6 +59,16 @@ public class CocineroControllerImpl implements CocineroController {
 		return cocineroService.findAll();
 	}
 	
+	@GetMapping(value = "/cocinerosresponseentity", produces = MediaType.APPLICATION_JSON_VALUE)
+	@Override
+	public ResponseEntity<List<Cocinero>> getCocinerosResponseEntity(){
+		List<Cocinero> cocineros = cocineroService.findAll();
+		if(cocineros == null || cocineros.isEmpty()) {
+			return ResponseEntity.noContent().build(); 
+		}
+		return ResponseEntity.ok(cocineros);
+	}
+	
 	@GetMapping(value = "/cocineros/page/{page}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@Override
 	public Page<Cocinero> getCocineros(@PathVariable Integer page) {
@@ -83,9 +93,10 @@ public class CocineroControllerImpl implements CocineroController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		HttpHeaders headers = new HttpHeaders();
+		headers.add("prueba", "prueba");
 		return new ResponseEntity<Cocinero>(cocinero, headers, HttpStatus.OK);
 	}
-
+	
 	@PostMapping(value = "/cocineros", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@Override
 	public ResponseEntity<?> create(@Valid @RequestBody Cocinero cocinero, BindingResult result) {

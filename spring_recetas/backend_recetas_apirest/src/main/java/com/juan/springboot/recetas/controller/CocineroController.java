@@ -11,12 +11,21 @@ import com.juan.springboot.recetas.entity.Cocinero;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @Api(tags = "Cocinero API")
 public interface CocineroController {
 	
 	@ApiOperation(value = "${controller.cocinero.getcocineros}")
 	public List<Cocinero> getCocineros();
+	
+	@ApiOperation(value = "Retrieve a list of cocineros in a ResponseEntity")
+	@ApiResponses(value = {
+		@ApiResponse(code = 200, message = "Existing list"),
+		@ApiResponse(code = 204, message = "Empty list of cocineros")
+	})
+	public ResponseEntity<List<Cocinero>> getCocinerosResponseEntity();
 	
 	@ApiOperation(value = "List all cocineros by page")
 	public Page<Cocinero> getCocineros(Integer page);
