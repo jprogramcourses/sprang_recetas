@@ -3,6 +3,8 @@ package com.juan.springboot.recetas.dto;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.constraints.Positive;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.juan.springboot.recetas.entity.Cocinero;
@@ -26,7 +28,10 @@ public class RecetaDto {
 	@JsonSerialize(using = LocalDateSerializer.class)
 	@JsonDeserialize(using = LocalDateDeserializer.class)
 	private Date createAt;
+	
+	@Positive
 	private Double totalPeso;
+	@Positive
 	private Double totalCalorias;
 	private Cocinero cocinero;
 	private List<ItemReceta> itemRecetas;

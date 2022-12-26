@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;
+import javax.validation.constraints.Positive;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -26,6 +27,7 @@ public class IngredienteDto {
 	@NotBlank
 	private String nombre;
 	private String descripcion;
+	@Positive
 	private Double calorias;
 	private Double grasa;
 	private Double proteina;
