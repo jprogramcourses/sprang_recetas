@@ -30,6 +30,18 @@ class JacksonUtilsTest {
 	}
 	
 	@Test
+	void javaObjectToJsonString() {
+		IngredienteDto ingredienteDto = new IngredienteDto();
+		ingredienteDto.setId(UUID.randomUUID());
+		ingredienteDto.setNombre("arroz");
+		ingredienteDto.setCalorias(1.00);
+		ingredienteDto.setDescripcion("Descripción");
+		
+		String ingredienteJsonString = jacksonUtils.javaObjectToJsonString(ingredienteDto);
+		assertNotNull(ingredienteJsonString);
+	}
+	
+	@Test
 	void jsonToJavaObjectExampleTest() {
 		String json = "{\"nombre\":\"ing\",\"descripcion\":null,\"calorias\":100.0,\"grasa\":null,\"proteina\":null,\"agua\":null,\"fibra\":null,\"carbohidratos\":null,\"acidosGrasosMonoinsaturados\":null,\"acidosGrasosPoliinsaturados\":null,\"acidosGrasosSaturados\":null,\"colesterol\":null,\"vitaminaA\":null,\"vitaminaB6\":null,\"vitaminaB12\":null,\"vitaminaC\":null,\"vitaminaD\":null,\"vitaminaE\":null,\"riboflavina\":null,\"tiamina\":null,\"niacina\":null,\"folato\":null,\"calcio\":null,\"hierro\":null,\"potasio\":null,\"sodio\":null,\"fosforo\":null,\"ioduro\":null,\"selenio\":null,\"zinc\":null,\"ingredienteId\":\"e2f503af-8170-46aa-8619-cba612e87f0e\"}";
 		IngredienteDto ingredienteDto = jacksonUtils.jsonToJavaObjectExample(json);

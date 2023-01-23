@@ -48,6 +48,18 @@ public class JacksonUtils {
 		}
 	}
 	
+	public String javaObjectToJsonString(IngredienteDto ingredienteDto) {
+		ObjectMapper objectMapper = new ObjectMapper();
+		
+		try {
+			return objectMapper.writeValueAsString(ingredienteDto);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	/**
 	 * JSON to Java Object, using ObjectMapper readValue.
 	 * 
