@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.juan.springboot.recetas.controller","l":"CocineroController"}];updateSearchResults();
